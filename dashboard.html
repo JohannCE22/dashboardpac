@@ -2,151 +2,64 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dashboard Power BI - Pacientes</title>
   <style>
-    /* Reset básico */
-    * {
-      box-sizing: border-box;
+    body {
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-    }
-    body, html {
-      height: 100%;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f7fa;
-      color: #333;
+      background-color: #f4f6f8;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
     }
-
-    /* Navbar */
-    nav {
-      background: #0078d4;
+    header {
+      background-color: #20232a;
       color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
+      padding: 20px;
+      text-align: center;
     }
-    nav .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      user-select: none;
-      letter-spacing: 2px;
-    }
-    nav .title {
-      font-size: 1.25rem;
-      flex-grow: 1;
-      user-select: none;
-    }
-
-    /* Main content */
     main {
-      margin-top: 72px; /* espacio por navbar */
-      flex-grow: 1;
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 1rem;
-      background: white;
-      box-shadow: inset 0 0 15px rgb(0 0 0 / 0.05);
-      min-height: calc(100vh - 72px - 40px); /* navbar + footer */
+      padding: 20px;
     }
-
-    /* Contenedor del reporte */
-    #report-container {
-      width: 100%;
-      max-width: 1200px;
-      height: 80vh;
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgb(0 0 0 / 0.15);
-      background: #fff;
-    }
-
     iframe {
-      width: 100%;
-      height: 100%;
       border: none;
-      display: block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      width: 100%;
+      height: 90vh;
     }
-
-    /* Loading spinner */
-    #loader {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border: 6px solid #f3f3f3;
-      border-top: 6px solid #0078d4;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
-      z-index: 10;
-    }
-
-    @keyframes spin {
-      0% { transform: translate(-50%, -50%) rotate(0deg); }
-      100% { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-
-    /* Footer */
     footer {
-      height: 40px;
-      background: #0078d4;
-      color: #eee;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 0.9rem;
-      user-select: none;
+      background-color: #20232a;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
     }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav {
-        padding: 1rem;
-      }
-      nav .title {
-        font-size: 1rem;
-      }
-      #report-container {
-        height: 60vh;
-      }
-    }
-
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="logo">PBI</div>
-    <div class="title">Dashboard Pacientes</div>
-  </nav>
+  <header>
+    <h1>Reporte Power BI: Pacientes</h1>
+  </header>
 
   <main>
-    <div id="report-container">
-      <div id="loader"></div>
-      <iframe 
-        title="Pacientes" 
-        src="https://app.powerbi.com/reportEmbed?reportId=17fa21f3-0cc6-43a6-aa74-7d631d05e408&autoAuth=true&ctid=773af67d-0d1e-403b-92c2-3dc991998967" 
-        allowfullscreen
-        onload="document.getElementById('loader').style.display='none';"
-      ></iframe>
-    </div>
+    <iframe 
+      title="Pacientes"
+      src="https://app.powerbi.com/reportEmbed?reportId=17fa21f3-0cc6-43a6-aa74-7d631d05e408&autoAuth=true&ctid=773af67d-0d1e-403b-92c2-3dc991998967" 
+      allowfullscreen>
+    </iframe>
   </main>
 
   <footer>
-    © 2025 Power BI Dashboard • Creado por Johann Castillo Escobar
+    © 2025 - Dashboard Power BI | Todos los derechos reservados
   </footer>
 
 </body>
 </html>
+
